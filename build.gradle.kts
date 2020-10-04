@@ -100,20 +100,20 @@ allprojects {
         archives(sourceJar)
     }
 
-    publishing {
-        publications.create<MavenPublication>("mavenJava") {
-            from(components["java"])
-            artifact(sourceJar)
-        }
-        repositories.maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/kotlin-graphics/imgui")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
+//    publishing {
+//        publications.create<MavenPublication>("mavenJava") {
+//            from(components["java"])
+//            artifact(sourceJar)
+//        }
+//        repositories.maven {
+//            name = "GitHubPackages"
+//            url = uri("https://maven.pkg.github.com/kotlin-graphics/imgui")
+//            credentials {
+//                username = System.getenv("GITHUB_ACTOR")
+//                password = System.getenv("GITHUB_TOKEN")
+//            }
+//        }
+//    }
 
     // == Add access to the 'modular' variant of kotlin("stdlib"): Put this into a buildSrc plugin and reuse it in all your subprojects
     configurations.all { attributes.attribute(TargetJvmVersion.TARGET_JVM_VERSION_ATTRIBUTE, 11) }
