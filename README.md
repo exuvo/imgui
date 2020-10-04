@@ -112,7 +112,7 @@ You should be able to try the examples from `test` (tested on Windows/Mac/Linux)
 OpenGL Kotlin:
 
 - [lwjgl](imgui-gl/src/test/kotlin/imgui/examples/opengl3.kt) 
-- [jogl](imgui-jogl/src/test/kotlin/imgui/examples/JoglGL3.kt) (currently not-maintained)
+- [jogl](jogl/src/test/kotlin/imgui/examples/JoglGL3.kt) (currently not-maintained)
 
 OpenGL Java:
 
@@ -229,7 +229,7 @@ dependencies {
     This example gets the OpenGL needed modules.
      */
     ["gl", "glfw", "core"].each {
-        implementation "com.github.kotlin-graphics.imgui:imgui-$it:-SNAPSHOT"
+        implementation "com.github.kotlin-graphics.imgui:$it:-SNAPSHOT"
     }
 	
     switch ( OperatingSystem.current() ) {
